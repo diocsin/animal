@@ -2,8 +2,8 @@ package by.iluyshenko.animal;
 
 public class Bird extends Pet {
 
-    public Bird(String name, int age, String ownerName) {
-        super(name, "Птица", age, ownerName);
+    public Bird(String name, int age) {
+        super(name, "Птица", age);
     }
 
     @Override

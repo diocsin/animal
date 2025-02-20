@@ -25,6 +25,10 @@ public abstract class Animal {
 
     public abstract void eat();
 
+    public void sleep() {
+        System.out.println(name + " спит.");
+    }
+
     @Override
     public String toString() {
         return species + " по имени " + name + ", возраст: " + age + " (ID: " + id + ")";

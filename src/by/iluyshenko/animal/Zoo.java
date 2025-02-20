@@ -4,27 +4,26 @@ public class Zoo {
 
     public static void main(String[] args) {
         Animal[] animals = {
-                new Dog("Барсик", 3, "Иван"),
-                new Cat("Мурка", 2, "Анна"),
-                new Bird("Кеша", 1, "Мария"),
-                new Lion("Симба", 5, "Африканская саванна")
+                new Dog("Барсик", 3),
+                new Cat("Мурка", 2),
+                new Bird("Кеша", 1),
         };
 
-        for (Animal animal : animals) {
-            System.out.println(animal);
-            animal.makeSound();
-            animal.move();
-            animal.eat();
+        Owner owner = new Owner();
 
+        for (Animal animal : animals) {
             if (animal instanceof Pet pet) {
+                owner.addPet(pet);
                 pet.play();
             } else if (animal instanceof WildAnimal wildAnimal) {
                 wildAnimal.hunt();
             }
-
+            animal.makeSound();
+            animal.move();
+            animal.eat();
             System.out.println();
-            System.out.println("Общее количество животных " + Animal.getTotalAnimals());
         }
+        System.out.println("Общее количество животных " + Animal.getTotalAnimals());
     }
 
 }
